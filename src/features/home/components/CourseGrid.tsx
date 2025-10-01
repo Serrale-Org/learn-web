@@ -76,8 +76,8 @@ const sampleItems: CourseListItem[] = [
 ];
 
 export async function CourseGrid({ q }: { q?: string }) {
-  const data = await getCourses({ q, limit: 9 });
-  let items: CourseListItem[] = (data?.items ?? []).map((c: any) => ({
+  // const data = await getCourses({ q, limit: 9 });
+  let items: CourseListItem[] = (sampleItems ?? []).map((c: any) => ({
     id: c.id,
     title: c.title,
     slug: c.slug,
