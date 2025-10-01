@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 export function Header() {
   return (
     <header className="w-full border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="/" className="font-semibold tracking-tight text-xl">
+        <Link href="/" className="font-semibold tracking-tight text-xl">
           Serrale Learn
-        </a>
+        </Link>
         <nav className="hidden sm:flex items-center gap-6  text-muted-foreground">
           <a href="#courses" className="hover:text-foreground">
             Courses
@@ -20,12 +22,12 @@ export function Header() {
           </a>
         </nav>
         <div className="flex items-center gap-6">
-          <a
+          <Link
             href="/login"
             className="t text-muted-foreground hover:text-foreground"
           >
             Sign in
-          </a>
+          </Link>
           <a
             href="#courses"
             className=" px-3 py-2 rounded-md bg-primary text-primary-foreground"
