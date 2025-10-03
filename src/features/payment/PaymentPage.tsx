@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/features/home/components/Header";
 import { Footer } from "@/features/home/components/Footer";
+import { getCourseBySlug } from "@/features/courses/data/sampleCourses";
 
 export default function PaymentPage({
   searchParams,
@@ -13,9 +14,11 @@ export default function PaymentPage({
     thumb?: string;
   };
 }) {
-  const title = searchParams?.title ?? "Course";
-  const price = searchParams?.price ?? "0.00";
-  const thumb = searchParams?.thumb;
+  const slug = searchParams?.slug;
+  const base = slug ? getCourseBySlug(slug) : undefined;
+  const title = base?.title ?? searchParams?.title ?? "Course";
+  const price = String(base?.price ?? searchParams?.price ?? "0.00");
+  const thumb = base?.thumbnailUrl ?? searchParams?.thumb;
 
   return (
     <div className="flex flex-col">

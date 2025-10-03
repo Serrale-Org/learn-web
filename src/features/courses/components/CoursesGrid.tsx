@@ -1,6 +1,6 @@
-import { getCourses } from "@/shared/api/olp";
 import { CourseCard } from "@/features/home/components/CourseCard";
 import { Pagination } from "./Pagination";
+import { sampleCourses } from "@/features/courses/data/sampleCourses";
 
 type Props = {
   q?: string;
@@ -10,22 +10,17 @@ type Props = {
 };
 
 export async function CoursesGrid({ q, category, level, page = 1 }: Props) {
-  // const data = await getCourses({ q, category, level, page, limit: 12 });
-  const data = {
-    items: Array.from({ length: 12 }).map((_, i) => ({
-      id: String(i + 1 + (page - 1) * 12),
-      title: `Sample Course ${i + 1 + (page - 1) * 12}`,
-      slug: `sample-course-${i + 1 + (page - 1) * 12}`,
-      thumbnailUrl:
-        "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1102&auto=format&fit=crop&ixlib=rb-4.1.0",
-      level: "Beginner",
-      certificationType: "Certificate",
-      price: 199,
-    })),
-    total: 60,
-    page,
-    pageSize: 12,
-  };
+  const pageSize = 12;
+  const filtered = sampleCourses.filter((c) => {
+    const qOk = q ? c.title.toLowerCase().includes(q.toLowerCase()) : true;
+    const levelOk = level
+      ? (c.level || "").toLowerCase() === level.toLowerCase()
+      : true;
+    return qOk && levelOk;
+  });
+  const start = (page - 1) * pageSize;
+  const items = filtered.slice(start, start + pageSize);
+  const data = { items, total: filtered.length, page, pageSize };
 
   const totalPages = Math.max(1, Math.ceil((data.total ?? 0) / data.pageSize));
 

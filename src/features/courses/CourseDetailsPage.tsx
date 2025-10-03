@@ -8,27 +8,30 @@ import { TeacherSection } from "./components/TeacherSection";
 import { ReviewsSection } from "./components/ReviewsSection";
 import { AboutSection } from "./components/AboutSection";
 
+import { getCourseBySlug } from "./data/sampleCourses";
+
 type CourseDetailsPageProps = {
   slug: string;
 };
 
-// Mock course data - replace with actual API call
-const getCourseData = (slug: string) => {
-  return {
-    id: "1",
-    title: "UI/UX Design",
-    slug: slug,
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1602064172250-43f8909056c7?q=80&w=957&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    level: "Beginner",
-    certificationType: "Certificate",
-    price: "32.00",
-    rating: 4.8,
-    reviewCount: 120,
+export default function CourseDetailsPage({ slug }: CourseDetailsPageProps) {
+  const base = getCourseBySlug(slug);
+  const course = {
+    id: base?.id || "-",
+    title: base?.title || "Course",
+    slug,
+    thumbnailUrl: base?.thumbnailUrl,
+    level: base?.level,
+    certificationType: base?.certificationType,
+    price: String(base?.price ?? "0.00"),
+    rating: base?.rating ?? 4.8,
+    reviewCount: base?.reviewCount ?? 120,
     description:
-      "Learn the fundamentals of UI/UX design and create stunning user interfaces that users love.",
+      base?.description ||
+      "Learn the fundamentals of this course and build real-world skills.",
     longDescription:
-      "This comprehensive course covers everything you need to know about UI/UX design. From understanding user psychology to creating wireframes and prototypes, you'll learn the complete design process. Our hands-on approach ensures you'll have a portfolio-ready project by the end of the course.",
+      (base?.description || "") +
+      " This comprehensive course takes you from basics to confident practice with hands-on exercises.",
     skills: [
       "User Research & Analysis",
       "Wireframing & Prototyping",
@@ -41,9 +44,9 @@ const getCourseData = (slug: string) => {
       name: "Neil Cannon",
       avatar:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop&ixlib=rb-4.1.0",
-      rating: 4.8,
-      reviewCount: 120,
-      bio: "Senior UI/UX Designer with 8+ years of experience at leading tech companies. Passionate about creating intuitive and beautiful user experiences.",
+      rating: base?.rating ?? 4.8,
+      reviewCount: base?.reviewCount ?? 120,
+      bio: "Senior instructor with extensive real-world experience.",
     },
     reviews: [
       {
@@ -61,8 +64,7 @@ const getCourseData = (slug: string) => {
         avatar:
           "https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=100&auto=format&fit=crop&ixlib=rb-4.1.0",
         rating: 5,
-        comment:
-          "I learned so much from this course. The design principles are explained in a way that's easy to understand.",
+        comment: "I learned so much from this course. Very easy to follow.",
       },
       {
         id: "3",
@@ -70,15 +72,10 @@ const getCourseData = (slug: string) => {
         avatar:
           "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop&ixlib=rb-4.1.0",
         rating: 5,
-        comment:
-          "Great hands-on approach. The projects helped me build a strong portfolio.",
+        comment: "Great hands-on approach with practical exercises.",
       },
     ],
   };
-};
-
-export default function CourseDetailsPage({ slug }: CourseDetailsPageProps) {
-  const course = getCourseData(slug);
 
   return (
     <div className="flex flex-col">
