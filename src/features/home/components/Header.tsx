@@ -8,9 +8,9 @@ export function Header() {
           Serrale Learn
         </Link>
         <nav className="hidden sm:flex items-center gap-6  text-muted-foreground">
-          <a href="#courses" className="hover:text-foreground">
+          <Link href="/courses" className="hover:text-foreground">
             Courses
-          </a>
+          </Link>
           <a href="#how" className="hover:text-foreground">
             How it works
           </a>
@@ -28,12 +28,12 @@ export function Header() {
           >
             Sign in
           </Link>
-          <a
-            href="#courses"
+          <Link
+            href="/courses"
             className=" px-3 py-2 rounded-md bg-primary text-primary-foreground"
           >
             Browse courses
-          </a>
+          </Link>
         </div>
       </div>
     </header>

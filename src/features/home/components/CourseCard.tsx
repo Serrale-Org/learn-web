@@ -30,7 +30,7 @@ export function CourseCard({
       ) : (
         <div className="w-full h-40 bg-neutral-100" />
       )}
-      <div className="mt-3 space-y-1">
+      <div className="mt-3 space-y-2">
         <div className="flex items-center justify-between">
           <h3 className="font-medium text-xl line-clamp-2 tracking-tight">
             {title}

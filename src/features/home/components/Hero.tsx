@@ -18,7 +18,7 @@ export function Hero() {
             </p>
             <div className="flex items-center gap-4">
               <Link
-                href="#courses"
+                href="/courses"
                 className="px-5 py-3 rounded-md bg-primary text-primary-foreground font-medium"
               >
                 Browse courses

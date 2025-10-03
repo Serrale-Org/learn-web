@@ -51,7 +51,7 @@ export function TestimonialsStrip() {
             Satisfied Student Say
           </div>
         </div>
-        <div className="mt-14 py-3 border-y border-border -rotate-3">
+        <div className="mt-14 py-3 border-y border-border rotate-2">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
               {items.map((t) => (
