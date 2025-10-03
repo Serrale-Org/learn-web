@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { StarIcon } from "lucide-react";
+import { testimonials } from "@/features/home/data/testimonials";
 
 type Review = {
   id: string;
@@ -10,16 +11,24 @@ type Review = {
 };
 
 type ReviewsSectionProps = {
-  reviews: Review[];
+  reviews?: Review[];
 };
 
 export function ReviewsSection({ reviews }: ReviewsSectionProps) {
+  const fallback = testimonials.slice(0, 3).map((t, i) => ({
+    id: String(i + 1),
+    name: t.name,
+    avatar: t.avatar,
+    rating: 5,
+    comment: t.quote,
+  }));
+  const data = reviews && reviews.length ? reviews : fallback;
   return (
     <div className="bg-muted rounded-lg  p-6">
       <h2 className="text-2xl font-semibold mb-6">Reviews</h2>
 
       <div className="space-y-6">
-        {reviews.map((review) => (
+        {data.map((review) => (
           <div key={review.id} className="flex gap-4">
             <Image
               src={review.avatar}

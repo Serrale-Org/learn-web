@@ -9,6 +9,7 @@ import { ReviewsSection } from "./components/ReviewsSection";
 import { AboutSection } from "./components/AboutSection";
 
 import { getCourseBySlug } from "./data/sampleCourses";
+import { getInstructorForSlug } from "./data/instructors";
 
 type CourseDetailsPageProps = {
   slug: string;
@@ -40,14 +41,16 @@ export default function CourseDetailsPage({ slug }: CourseDetailsPageProps) {
       "User Testing & Iteration",
       "Design Systems & Components",
     ],
-    teacher: {
-      name: "Neil Cannon",
-      avatar:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop&ixlib=rb-4.1.0",
-      rating: base?.rating ?? 4.8,
-      reviewCount: base?.reviewCount ?? 120,
-      bio: "Senior instructor with extensive real-world experience.",
-    },
+    teacher: (() => {
+      const inst = getInstructorForSlug(slug);
+      return {
+        name: inst.name,
+        avatar: inst.avatar,
+        rating: base?.rating ?? inst.rating,
+        reviewCount: base?.reviewCount ?? inst.reviewCount,
+        bio: inst.bio,
+      };
+    })(),
     reviews: [
       {
         id: "1",
@@ -92,7 +95,7 @@ export default function CourseDetailsPage({ slug }: CourseDetailsPageProps) {
 
         <div className="w-full max-w-7xl mx-auto px-4 py-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <ReviewsSection reviews={course.reviews} />
+            <ReviewsSection />
             <AboutSection description={course.longDescription} />
           </div>
         </div>

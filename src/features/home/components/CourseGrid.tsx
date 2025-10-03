@@ -61,7 +61,7 @@ export async function CourseGrid({ q }: { q?: string }) {
           </div>
         </div>
         <div className="grid grid-cols-1 mt-14 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {items.map((c) => (
+          {items.slice(0, 6).map((c) => (
             <CourseCard
               key={c.id}
               title={c.title}

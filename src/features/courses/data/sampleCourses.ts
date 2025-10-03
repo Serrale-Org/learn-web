@@ -17,7 +17,7 @@ export const sampleCourses: SampleCourse[] = [
     title: "Customer Handling & Support",
     slug: "customer-handling-support",
     thumbnailUrl:
-      "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1758876202189-0fbc277dfed9?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     level: "Beginner",
     certificationType: "Certificate",
     price: 149,
@@ -31,7 +31,7 @@ export const sampleCourses: SampleCourse[] = [
     title: "Sales & Call Operator Training",
     slug: "sales-call-operator-training",
     thumbnailUrl:
-      "https://images.unsplash.com/photo-1525183797221-3e8b0f1d5b83?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1758519290802-516e99b4688a?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     level: "Beginner",
     certificationType: "Certificate",
     price: 159,
@@ -45,7 +45,7 @@ export const sampleCourses: SampleCourse[] = [
     title: "Copywriting",
     slug: "copywriting",
     thumbnailUrl:
-      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1612831199117-a3aa88c5badc?q=80&w=1218&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     level: "Beginner",
     certificationType: "Certificate",
     price: 129,
@@ -58,7 +58,7 @@ export const sampleCourses: SampleCourse[] = [
     title: "Content Creation (Canva + AI)",
     slug: "content-creation-canva-ai",
     thumbnailUrl:
-      "https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1730890802243-ed276ffebb79?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     level: "Beginner",
     certificationType: "Certificate",
     price: 139,
@@ -71,7 +71,7 @@ export const sampleCourses: SampleCourse[] = [
     title: "Virtual Assistance",
     slug: "virtual-assistance",
     thumbnailUrl:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1601342550031-d6df73676153?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     level: "Beginner",
     certificationType: "Certificate",
     price: 129,
@@ -85,7 +85,7 @@ export const sampleCourses: SampleCourse[] = [
     title: "AI for Everyday Tasks",
     slug: "ai-for-everyday-tasks",
     thumbnailUrl:
-      "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1677691820099-a6e8040aa077?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     level: "Beginner",
     certificationType: "Certificate",
     price: 119,
@@ -99,7 +99,7 @@ export const sampleCourses: SampleCourse[] = [
     title: "Documentation & Proposal Writing",
     slug: "documentation-proposal-writing",
     thumbnailUrl:
-      "https://images.unsplash.com/photo-1529078155058-5d716f45d604?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1758874572310-dca7e1a5f603?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     level: "Beginner",
     certificationType: "Certificate",
     price: 139,
@@ -113,7 +113,7 @@ export const sampleCourses: SampleCourse[] = [
     title: "Digital Marketing",
     slug: "digital-marketing",
     thumbnailUrl:
-      "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1633114073219-8c81a6bdb356?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     level: "Beginner",
     certificationType: "Certificate",
     price: 149,
